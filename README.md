@@ -1,4 +1,5 @@
 [![Build Status](https://semaphoreci.com/api/v1/projects/0d67889d-96c6-456b-9495-9c019aea57b6/598844/badge.svg)](https://semaphoreci.com/skorbut/blackwell)
+
 == blackwell
 
 Store content in mongo DB and render markdown. First prototype.
