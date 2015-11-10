@@ -1,0 +1,11 @@
+%h1
+  New Document:
+
+= simple_form_for @document, :validation => true do |f|
+  = f.input :title
+  = f.input :author
+  = f.input :content
+
+  %p
+    = f.button :submit
+    = link_to 'Cancel', :back
