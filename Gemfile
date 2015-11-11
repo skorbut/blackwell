@@ -30,6 +30,7 @@ gem 'puma'
 # Use mongoid as database
 gem 'mongoid', '~> 5.0.0'
 gem 'bson_ext'
+gem 'better_errors'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
