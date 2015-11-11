@@ -5,13 +5,14 @@ blackwell
 
 Store content in mongo DB and render markdown. First prototype.
 
-Run via bundle exec puma -p 3000
+Run via bundle exec puma -p 3000 -c
 
 Things to add:
 
 * deploy to heroku/aws
 * users/authentication
 * fulltext search
+* images/attachments
 * tree structure to navigate
 * tags
 * proper forms
