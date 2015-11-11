@@ -3,17 +3,19 @@
 blackwell
 =========
 
-Store content in mongo DB and render markdown. First prototype.
+Store content in mongo DB and render markdown. First prototype. Running at
+https://cryptic-meadow-7722.herokuapp.com/
 
-Run via bundle exec puma -p 3000 -c
+Run via bundle exec puma -p 3000 -C config/puma.rb
 
 Things to add:
 
-* deploy to heroku/aws
-* users/authentication
+* ~~deploy to heroku~~
+* users/authentication/ownership
 * fulltext search
 * images/attachments
 * tree structure to navigate
 * tags
 * proper forms
 * some design
+* history
