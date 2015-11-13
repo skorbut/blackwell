@@ -8,6 +8,8 @@ describe Document do
     expect(document).to respond_to :title
     expect(document).to respond_to :content
     expect(document).to respond_to :tags
+    expect(document).to respond_to :created_at
+    expect(document).to respond_to :updated_at
   end
 
   describe '#save' do
