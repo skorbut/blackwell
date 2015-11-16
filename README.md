@@ -11,7 +11,7 @@ Run via bundle exec puma -p 3000 -C config/puma.rb
 Things to add:
 
 * ~~deploy to heroku~~
-* users/authentication/ownership
+* ~~users/authentication/ownership~~
 * fulltext search
 * images/attachments
 * tree structure to navigate
