@@ -1,0 +1,24 @@
+#clearance.sign-in {
+  background-color: #00ff00;
+  width: 450px;
+}
+
+#clearance form {
+  display: flex;
+  flex-direction: column;
+}
+
+#clearance form div{
+  display: flex;
+  flex-direction: row
+}
+
+#clearance form label {
+	width: 150px;
+}
+
+
+#clearance form input:not([type=submit]) {
+	flex: 1; /* fluid width */
+  width: 150px;
+}

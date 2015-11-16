@@ -8,3 +8,11 @@
         =link_to "Neuer Eintrag", new_document_path
       %li
         =link_to "Alle Einträge", documents_path
+      - if signed_in?
+        %li
+          = current_user.email if signed_in?
+        %li
+          = link_to "Sign out", sign_out_path, method: :delete
+      - else
+        %li
+          = link_to "Sign in", sign_in_path

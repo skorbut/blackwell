@@ -18,6 +18,35 @@ body{
   font-family:Arial,sans-serif;
 }
 
+.Blackwell {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+.Blackwell-body {
+  display: flex;
+  flex: 1;
+}
+
+.Blackwell-content {
+  flex: 1;
+}
+
+.Blackwell-nav, .Blackwell-right {
+  /* 12em is the width of the columns */
+  flex: 0 0 12em;
+}
+
+.Blackwell-nav {
+  /* put the nav on the left */
+  order: -1;
+}
+
+
+
+
+
 header#page_header, footer#page_footer{
   clear:both;
   width: 100%;
