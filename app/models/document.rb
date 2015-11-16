@@ -3,6 +3,7 @@ class Document
   include Mongoid::Timestamps
 
   field :author, type: String
+  field :author_id, type: BSON::ObjectId
   field :folder, type: String
   field :title, type: String
   field :content, type: String

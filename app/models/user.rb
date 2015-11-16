@@ -10,6 +10,7 @@ class User
   field :encrypted_password, type: String
   field :confirmation_token, type: String
   field :remember_token, type: String
+  field :name, type: String
 
   def self.find_by_email(email)
     User.where(email: email).first

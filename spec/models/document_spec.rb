@@ -4,6 +4,7 @@ describe Document do
   it 'contains the expected fields' do
     document = Document.new
     expect(document).to respond_to :author
+    expect(document).to respond_to :author_id
     expect(document).to respond_to :folder
     expect(document).to respond_to :title
     expect(document).to respond_to :content

@@ -31,11 +31,13 @@ body{
 
 .Blackwell-content {
   flex: 1;
+  background-color: #dddddd;
 }
 
 .Blackwell-nav, .Blackwell-right {
   /* 12em is the width of the columns */
   flex: 0 0 12em;
+  background-color: #eeeeee;
 }
 
 .Blackwell-nav {
@@ -52,6 +54,7 @@ header#page_header, footer#page_footer{
   width: 100%;
   display: block;
   text-align: center;
+  background-color: #cccccc;
 }
 
 header#page_header nav ul, footer#page_footer nav ul{

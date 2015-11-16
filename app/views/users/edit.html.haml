@@ -1,0 +1,8 @@
+%h1
+  Edit User:
+
+= simple_form_for @user, :validation => true do |f|
+  = f.input :name
+  %p
+    = f.button :submit
+    = link_to 'Cancel', :back
