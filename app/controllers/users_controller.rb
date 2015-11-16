@@ -4,7 +4,7 @@ class UsersController < Clearance::UsersController
   end
 
   def update
-    user.update_attributes(user_params)
+    user.update_attributes(profile_params)
     user.save!
     redirect_to root_path
   end
@@ -19,7 +19,7 @@ class UsersController < Clearance::UsersController
     @user||=User.find(params[:id])
   end
 
-  def user_params
+  def profile_params
     params.require(:user).permit(:name)
   end
 end
