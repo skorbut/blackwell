@@ -8,11 +8,14 @@
     = csrf_meta_tags
     %meta{ name: "viewport", content: "width=device-width, initial-scale=1.0" }
 
-  %body{ :id => params[:controller].parameterize}
-    .container
-      = render 'layouts/header'
-      .main-container
-        - flash.each do |name, msg|
-          = msg
+  %body.Blackwell{ :id => params[:controller].parameterize}
+    = render 'layouts/header'
+    .Blackwell-body
+      - flash.each do |name, msg|
+        = msg
+      %main.Blackwell-content
         = yield
-      = render 'layouts/footer'
+      - if signed_in?
+        %nav.Blackwell-nav
+          empty
+    = render 'layouts/footer'

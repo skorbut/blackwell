@@ -1,0 +1,35 @@
+#clearance.sign-in {
+  margin-left: 50px;
+  background-color: #cccccc;
+  width: 400px;
+  padding: 5px;
+}
+
+#clearance form {
+  display: flex;
+  flex-direction: column;
+}
+
+#clearance form div{
+  display: flex;
+  flex-direction: row
+}
+
+#clearance form label {
+	width: 150px;
+}
+
+
+#clearance form input:not([type=submit]) {
+	flex: 1; /* fluid width */
+  width: 150px;
+}
+
+#clearance form .other-links {
+	display: flex;
+  justify-content: flex-end;
+}
+
+#clearance form .other-links a{
+  padding-left: 5px;
+}
