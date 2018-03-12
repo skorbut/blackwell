@@ -1,5 +1,6 @@
 class DocumentsController < ApplicationController
   before_action :require_login
+  before_action :find_document, only: [:show, :edit, :update, :destroy]
 
   def index
     @documents = Document.all
@@ -9,13 +10,14 @@ class DocumentsController < ApplicationController
     document
   end
 
-  def show
-    @document = Document.find(params[:id])
+  def create
+    @document = Document.new(author: current_user.name, author_id: current_user.id)
+    @document.update(document_params)
+    render :show
   end
 
-  def create
-    document.update_attributes(document_params)
-    @document.save!
+  def update
+    @document.update(document_params)
     render :show
   end
 
@@ -25,7 +27,7 @@ class DocumentsController < ApplicationController
     params.require(:document).permit(:title, :content)
   end
 
-  def document
-    @document ||= Document.new(author: current_user.name, author_id: current_user.id)
+  def find_document
+    @document = Document.find(params[:id])
   end
 end
