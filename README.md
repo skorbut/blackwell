@@ -6,7 +6,10 @@ blackwell
 Store content in mongo DB and render markdown. First prototype. Running at
 https://cryptic-meadow-7722.herokuapp.com/
 
-Run via bundle exec puma -p 3000 -C config/puma.rb
+Install local mongo db via `docker pull mongo` and run it via `docker run --name some-mongo -p 27017:27017 -d mongo`
+
+
+Run application via bundle exec puma -p 3000 -C config/puma.rb
 
 Things to add:
 

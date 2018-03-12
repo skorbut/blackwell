@@ -22,7 +22,7 @@ class DocumentsController < ApplicationController
   private
 
   def document_params
-    params.require(:document).permit(:title, :author, :content)
+    params.require(:document).permit(:title, :content)
   end
 
   def document

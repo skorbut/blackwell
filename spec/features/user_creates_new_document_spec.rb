@@ -9,18 +9,18 @@ feature 'A user creates new a document' do
   end
   context 'with logging in' do
     scenario 'it displays the form' do
-      user = FactoryGirl.create(:user)
+      user = create(:user)
       visit new_document_path(as: user)
       expect(page).to_not have_content 'Sign in'
       expect(page).to have_css('h1', 'New Document')
     end
     scenario 'it populates the author field' do
-      user = FactoryGirl.create(:user, name: 'Kalle')
+      user = create(:user, name: 'Kalle')
       visit new_document_path(as: user)
       expect(page).to have_field('Author', with: 'Kalle')
     end
     scenario 'it saves the new document' do
-      user = FactoryGirl.create(:user, name: 'Bodo')
+      user = create(:user, name: 'Bodo')
       visit new_document_path(as: user)
       fill_in 'Title', with: 'My new document'
       fill_in 'Content', with: 'My content'

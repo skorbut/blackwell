@@ -3,8 +3,7 @@
 
 = simple_form_for @document, :validation => true do |f|
   = f.input :title
-  = f.input :author
-  = f.input :content
+  = f.input :content, as: :text
 
   %p
     = f.button :submit
