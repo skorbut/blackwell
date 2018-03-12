@@ -15,10 +15,12 @@ Things to add:
 
 * ~~deploy to heroku~~
 * ~~users/authentication/ownership~~
-* fulltext search
+* ~~fulltext search~~
 * images/attachments
 * tree structure to navigate
 * tags
+* calendars based on tags
 * proper forms
+* localization
 * some design
 * history

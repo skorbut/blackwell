@@ -3,11 +3,11 @@ class DocumentsController < ApplicationController
   before_action :find_document, only: [:show, :edit, :update, :destroy]
 
   def index
-    @documents = Document.all
+    @documents = search
   end
 
   def new
-    document
+    @document = Document.new
   end
 
   def create
@@ -29,5 +29,13 @@ class DocumentsController < ApplicationController
 
   def find_document
     @document = Document.find(params[:id])
+  end
+
+  def search
+    if(params[:q])
+      Document.by_author(current_user).having_text(params[:q]).newest_first
+    else
+      Document.by_author(current_user).newest_first
+    end
   end
 end

@@ -82,6 +82,7 @@ GEM
     factory_bot_rails (4.8.2)
       factory_bot (~> 4.8.2)
       railties (>= 3.0.0)
+    fast-stemmer (1.0.2)
     ffi (1.9.23)
     globalid (0.4.1)
       activesupport (>= 4.2.0)
@@ -109,6 +110,9 @@ GEM
     mongoid (6.3.0)
       activemodel (~> 5.1)
       mongo (>= 2.5.0, < 3.0.0)
+    mongoid_search (0.3.5)
+      fast-stemmer (~> 1.0.0)
+      mongoid (>= 3.0.0)
     nio4r (2.2.0)
     nokogiri (1.8.2)
       mini_portile2 (~> 2.3.0)
@@ -215,6 +219,7 @@ DEPENDENCIES
   jquery-rails
   kramdown
   mongoid
+  mongoid_search
   puma
   rails (= 5.1.5)
   rspec-rails
