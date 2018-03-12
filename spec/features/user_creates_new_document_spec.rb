@@ -14,11 +14,6 @@ feature 'A user creates new a document' do
       expect(page).to_not have_content 'Sign in'
       expect(page).to have_css('h1', 'New Document')
     end
-    scenario 'it populates the author field' do
-      user = create(:user, name: 'Kalle')
-      visit new_document_path(as: user)
-      expect(page).to have_field('Author', with: 'Kalle')
-    end
     scenario 'it saves the new document' do
       user = create(:user, name: 'Bodo')
       visit new_document_path(as: user)
