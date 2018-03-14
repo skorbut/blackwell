@@ -17,6 +17,7 @@ gem "kramdown"
 # Use mongoid as database
 gem 'mongoid'
 gem 'mongoid_search'
+gem 'mongoid-tag-collectible'
 gem 'bson_ext'
 gem 'better_errors'
 

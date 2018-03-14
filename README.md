@@ -18,7 +18,7 @@ Things to add:
 * ~~fulltext search~~
 * images/attachments
 * tree structure to navigate
-* tags
+* ~~tags~~
 * calendars based on tags
 * proper forms
 * localization

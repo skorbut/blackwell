@@ -2,16 +2,16 @@ class Document
   include Mongoid::Document
   include Mongoid::Search
   include Mongoid::Timestamps
+  include Mongoid::TagCollectible::Tagged
 
-  TITLE_REGEXP = /^(\s*# )(.*)$/
-  TAGS_REGEXP = /(#\w+)/
+  TITLE_REGEXP = /^(\s*# )([\wÄÖÜäöüß ]*)(.*)$/
+  TAGS_REGEXP = /(#)([\wÄÖÜäöüß]+)/
 
   field :author, type: String
   field :author_id, type: BSON::ObjectId
   field :folder, type: String
   field :title, type: String
   field :content, type: String
-  field :tags, type: Array
   field :created_at, type: DateTime
   field :updated_at, type: DateTime
 
@@ -30,13 +30,16 @@ class Document
     titles = content.lines.map do |line|
       Array(TITLE_REGEXP.match(line))[2]
     end
-    self.title ||= titles.compact.first&.strip
+    self.title ||= titles.compact.first
     true
   end
 
   def extract_tags
     return true if content.blank?
-    self.tags = content.lines.map { |line| line.scan(TAGS_REGEXP) }.flatten.uniq
+    extracted_tags = content.lines.map do |line|
+      line.scan(TAGS_REGEXP).map { |matches| matches[1] }
+    end
+    self.tags = extracted_tags.flatten.uniq.map(&:downcase)
     true
   end
 end

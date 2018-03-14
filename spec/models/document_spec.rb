@@ -30,10 +30,10 @@ describe Document do
 
     context "with title in content" do
       it 'extracts the title from the content' do
-        content = "\n # some title\n more content for the actual document"
+        content = "\n # some headline with Ä\n more content for the actual document"
         Document.new(content: content).save
 
-        expect(Document.first.title).to eq "some title"
+        expect(Document.first.title).to eq "some headline with Ä"
       end
     end
 
@@ -48,9 +48,9 @@ describe Document do
 
     context "with tags in the markdown" do
       it "populates the tags array" do
-        content = "\n #some #tags in the content\n #more #tags in the next line"
+        content = "\n #some #tags in the content\n #more #tags in the next line and #Glück"
         Document.new(content: content).save
-        expect(Document.first.tags).to contain_exactly("#some", "#tags", "#more")
+        expect(Document.first.tags).to contain_exactly("some", "tags", "more", "glück")
       end
     end
   end

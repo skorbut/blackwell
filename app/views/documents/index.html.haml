@@ -1,6 +1,8 @@
 %h1
   - if params[:q].present?
     = "All documents matching '#{params[:q]}'"
+  - elsif params[:t].present?
+    = "All documents tagged with '#{params[:t]}'"
   - else
     All documents
 = render @documents

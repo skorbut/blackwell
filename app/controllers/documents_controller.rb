@@ -3,7 +3,7 @@ class DocumentsController < ApplicationController
   before_action :find_document, only: [:show, :edit, :update, :destroy]
 
   def index
-    @documents = search
+    @documents = search_or_tag
   end
 
   def new
@@ -31,9 +31,11 @@ class DocumentsController < ApplicationController
     @document = Document.find(params[:id])
   end
 
-  def search
+  def search_or_tag
     if(params[:q])
       Document.by_author(current_user).having_text(params[:q]).newest_first
+    elsif(params[:t])
+      ::DocumentTag.find(params[:t]).tagged.by_author(current_user).newest_first
     else
       Document.by_author(current_user).newest_first
     end

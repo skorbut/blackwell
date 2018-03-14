@@ -110,6 +110,9 @@ GEM
     mongoid (6.3.0)
       activemodel (~> 5.1)
       mongo (>= 2.5.0, < 3.0.0)
+    mongoid-tag-collectible (0.2.2)
+      activesupport
+      mongoid (>= 3.0.0)
     mongoid_search (0.3.5)
       fast-stemmer (~> 1.0.0)
       mongoid (>= 3.0.0)
@@ -219,6 +222,7 @@ DEPENDENCIES
   jquery-rails
   kramdown
   mongoid
+  mongoid-tag-collectible
   mongoid_search
   puma
   rails (= 5.1.5)
