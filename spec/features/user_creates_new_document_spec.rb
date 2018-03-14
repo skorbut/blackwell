@@ -17,12 +17,11 @@ feature 'A user creates new a document' do
     scenario 'it saves the new document' do
       user = create(:user, name: 'Bodo')
       visit new_document_path(as: user)
-      fill_in 'Title', with: 'My new document'
-      fill_in 'Content', with: 'My content'
+      fill_in 'Content', with: "\n# My new document\nMy content"
       click_button "Create Document"
       expect(Document.count).to eq 1
       expect(Document.first.title).to eq 'My new document'
-      expect(Document.first.content).to eq 'My content'
+      expect(Document.first.content).to eq "\r\n# My new document\r\nMy content"
       expect(Document.first.author).to eq 'Bodo'
       expect(Document.first.author_id).to eq user.id
     end
