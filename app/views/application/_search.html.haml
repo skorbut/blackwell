@@ -1,3 +1,4 @@
+%h2="Search"
 = form_tag(documents_path, method: :get) do
   = text_field_tag :q, params[:q]
   = submit_tag 'Search', name: nil

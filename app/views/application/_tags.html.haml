@@ -1,3 +1,4 @@
+%h2= "Tags"
 %ul
   - document_tags.each do |tag|
     %li= link_to "#{tag.name}(#{tag.count})", documents_path(t: tag.name)
